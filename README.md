@@ -25,3 +25,33 @@ The goal was to **extend the existing pipeline** to handle high concurrent loads
 
 ## ⚙️ Architecture Overview
 
+GitHub Actions → Artifact Registry → GKE Deployment → Flask API Service
+↑ ↓ ↓
+Push to Main Docker Image Build Autoscaling via HPA
+
+
+**Key Components**
+- **GitHub Actions** — Continuous integration & deployment
+- **Google Artifact Registry** — Docker image storage
+- **GKE Cluster (`iris-cluster`)** — Application deployment
+- **Horizontal Pod Autoscaler** — Dynamic scaling
+- **wrk** — Load testing and bottleneck observation
+
+---
+
+## 🧩 Tech Stack
+
+| Category | Tools |
+|-----------|-------|
+| CI/CD | GitHub Actions |
+| Cloud Platform | Google Cloud Platform (GCP) |
+| Containerization | Docker |
+| Orchestration | Google Kubernetes Engine (GKE) |
+| Registry | Artifact Registry |
+| Load Testing | wrk |
+| Language / Framework | Python (Flask) |
+
+---
+
+
+
